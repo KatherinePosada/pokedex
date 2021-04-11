@@ -13,7 +13,13 @@
       The digital encyclopedia created by Professor Oak is an invaluable tool to Trainers in the Pokémon world.
     </p>
 
-    <button type="button" class="btn rounded-pill btn-get-started">Get started</button>
+    <button 
+      type="button"
+      class="btn rounded-pill btn-get-started"
+      @click="$router.push({name: 'Pokemons'})" 
+    >
+      Get started
+    </button>
 
   </div>
 </template>
@@ -34,7 +40,7 @@ export default {
   .pikachu-welcome{
     width: 325px;
     height: 288px;
-    margin-top: -35px;
+    margin-top: 50px;
   }
 
   h2{
