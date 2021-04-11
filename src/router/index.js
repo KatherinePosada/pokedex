@@ -14,7 +14,7 @@ const routes = [
     path: '/pokemons',
     name: 'Pokemons',
     component: () => import(/* webpackChunkName: "about" */ '../views/Pokemons.vue')
-  }
+  },
 ]
 
 const router = new VueRouter({

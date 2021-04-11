@@ -6,22 +6,34 @@
       class="card mt-2 border-0"
     >
       <div class="card-body">
-        <span class="pokemon float-left">
+        <span 
+          class="pokemon float-left"
+          ata-bs-toggle="modal"
+          data-bs-target="#staticBackdrop"
+          @click="nameSelected = pokemon.name"
+          v-b-modal.modal-center
+        >
           {{ pokemon.name.replace(/^\w/, (c) => c.toUpperCase()) }}
         </span>
         <img 
           alt="star"
-          src="../../assets/defaultStar.svg"
+          src="../../assets/pokemons/defaultStar.svg"
           size="small"
           class="star"
         />
       </div>
     </div>
+
+    <PokemonDetail v-if="nameSelected !== ''" :name="nameSelected"/>
   </div>
 </template>
 
 <script>
+import PokemonDetail from '../../views/PokemonDetail.vue'
 export default {
+  components: {
+    PokemonDetail,
+  },
   props: {
     pokemons: {
       type: Array,
@@ -30,6 +42,7 @@ export default {
   },
   data() {
     return {
+      nameSelected: ''
     }
   },
 

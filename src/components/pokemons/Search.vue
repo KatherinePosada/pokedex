@@ -2,7 +2,7 @@
   <div class="div-search">
     <img 
       alt="search"
-      src="../../assets/search.svg"
+      src="../../assets/pokemons/search.svg"
       size="small"
       class="search-icon"
     />
