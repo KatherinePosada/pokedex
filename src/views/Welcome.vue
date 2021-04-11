@@ -3,7 +3,6 @@
     <img 
       alt="pikachuWelcome"
       src="../assets/pikachuWelcome.svg"
-      size="small"
       class="pikachu-welcome"
     />
 
