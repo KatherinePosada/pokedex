@@ -15,16 +15,14 @@ export default {
       default: ''
     },
     weight: {
-      type: String,
-      default: ''
+      type: Number,
     },
     height: {
-      type: String,
-      default: ''
+      type: Number,
     },
     types:{
-      type: String,
-      default: ''
+      type: Array,
+      default: Array
     },
   },
 

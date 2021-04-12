@@ -10,7 +10,7 @@
           class="pokemon float-left"
           ata-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
-          @click="nameSelected = pokemon.name"
+          @click="changePokemon(pokemon.name)"
           v-b-modal.modal-center
         >
           {{ pokemon.name.replace(/^\w/, (c) => c.toUpperCase()) }}
@@ -24,12 +24,14 @@
       </div>
     </div>
 
-    <PokemonDetail v-if="nameSelected !== ''" :name="nameSelected"/>
+    <PokemonDetail :key="namePokemon"/>
   </div>
 </template>
 
 <script>
 import PokemonDetail from '../../views/PokemonDetail.vue'
+import { mapState, mapActions } from 'vuex'
+
 export default {
   components: {
     PokemonDetail,
@@ -40,9 +42,14 @@ export default {
       default: Array
     },
   },
+  computed: {
+    ...mapState(['namePokemon'])
+  },
+  methods: {
+    ...mapActions(['changePokemon'])
+  },
   data() {
     return {
-      nameSelected: ''
     }
   },
 

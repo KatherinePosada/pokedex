@@ -18,13 +18,12 @@ export default {
     List,
   },
   created() {
-    try {
-      axios
-        .get(urlBase)
-        .then(resp => (this.pokemons = resp.data.results));
-    } catch (error) {
-      console.error("Could't get pokemons");
-    }
+    axios
+      .get(urlBase)
+      .then(resp => (this.pokemons = resp.data.results))
+      .catch(error => {
+        console.error("Could't get pokemons", error)
+      }) 
   },
   data() {
     return {
